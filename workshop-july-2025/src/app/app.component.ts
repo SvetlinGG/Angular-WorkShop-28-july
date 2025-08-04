@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ref, get} from '@angular/fire/database'; 
+import { FirebaseApp } from '@angular/fire/app';
+import { FirebaseService } from './firebase.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +13,18 @@ import { ref, get} from '@angular/fire/database';
 export class AppComponent implements OnInit {
   title = 'Angular Project';
 
+  constructor(private firebaseService: FirebaseService){}
+
   ngOnInit(): void {
     this.serviceTest()
 
     
   }
   serviceTest(){
-    const x = get(ref('workshop-angular-july-2025' as any, 'post'));
-    console.log(x);
+    this.firebaseService.getAll().then(p => {
+      console.log(p);
+      
+    });
     
   }
 }
