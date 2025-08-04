@@ -6,6 +6,4 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
 
   provideFirebaseApp(() => initializeApp()),
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), 
-  provideRouter(routes)]
-};
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]}

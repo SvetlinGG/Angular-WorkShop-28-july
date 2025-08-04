@@ -12,10 +12,13 @@ export class AppComponent implements OnInit {
   title = 'Angular Project';
 
   ngOnInit(): void {
+    this.serviceTest()
 
+    
+  }
+  serviceTest(){
     const x = get(ref('workshop-angular-july-2025' as any, 'post'));
     console.log(x);
-    
     
   }
 }
