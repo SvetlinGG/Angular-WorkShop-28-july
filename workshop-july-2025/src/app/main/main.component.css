@@ -1,4 +1,7 @@
 /* main  */
+main {
+    width: 50%;
+}
 .container {
     width: 90%;
     margin: auto;
