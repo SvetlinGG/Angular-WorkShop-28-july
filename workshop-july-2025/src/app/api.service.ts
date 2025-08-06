@@ -11,7 +11,12 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getPosts(){
+    const {apiUrl} = environment;
+    return this.http.get<Post[]>(`${apiUrl}/posts`)
+  }
+  getThemes(){
     const {apiUrl} = environment
-    return this.http.get<Post[]>(`${apiUrl}/posts/.json`)
+    return this.http.get<Post[]>(`${apiUrl}/themes`)
+
   }
 }
