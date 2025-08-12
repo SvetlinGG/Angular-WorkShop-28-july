@@ -22,6 +22,7 @@ export class AppComponent {
 
   }
   ngOnInit(){
+    
     // this.http.get('https://workshop-angular-july-2025-default-rtdb.firebaseio.com/product/.json').subscribe( (x)=> {
     //   console.log(x);
       
