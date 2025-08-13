@@ -14,12 +14,12 @@ export class ApiService {
   getPosts(limit?: number){
     const {apiUrl} = environment;
 
-    let url = `${apiUrl}/posts`
+    let url = `${apiUrl}/posts`;
 
     if (limit){
-      url += `?limit=${limit}`
+      url += `?limit=${limit}`;
     }
-    return this.http.get<Post[]>(url)
+    return this.http.get<Post[]>(url);
   }
   getThemes(){
     const {apiUrl} = environment
