@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
+import { Theme } from '../../types/theme';
 
 @Component({
   selector: 'app-themes-list',
@@ -9,6 +10,8 @@ import { ApiService } from '../../api.service';
   styleUrl: './themes-list.component.css'
 })
 export class ThemesListComponent implements OnInit {
+  themes: Theme[] = [];
+  isLoading = true;
 
   constructor(private apiService: ApiService){
 
@@ -16,7 +19,11 @@ export class ThemesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.getThemes().subscribe((themes) => {
+      this.themes = themes
+      this.isLoading = false;
+      
       console.log(themes);
+      
   })
 
 }
