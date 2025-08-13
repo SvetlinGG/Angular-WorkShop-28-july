@@ -1,12 +1,12 @@
 <div class="container">
     <main>
         <div class="theme-title">
-            
+            @for (theme of themes; track $index) {
             <!-- theme component  -->
             <div class="theme-container">
                 <div class="theme-name-wrapper">
                     <div class="theme-name">
-                        <a href="#" class="normal">
+                        <a [routerLink]="theme._id" class="normal">
                             <h2>Angular </h2>
                         </a>
                         <div class="columns">
@@ -108,6 +108,7 @@
                     </div>
                 </div>
             </div>
+        }
         </div>
     </main>
    
