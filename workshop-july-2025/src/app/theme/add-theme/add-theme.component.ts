@@ -10,11 +10,11 @@ import { ApiService } from '../../api.service';
 })
 export class AddThemeComponent {
 
-  constructor(private apiService: ApiService){
+  constructor(private apiService: ApiService){}
 
     addTheme(){
       
     }
-  }
+  
 
 }
