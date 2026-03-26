@@ -9,11 +9,13 @@ import { ApiService } from '../api.service';
   styleUrl: './posts-list.component.css'
 })
 export class PostsListComponent implements OnInit {
+  posts: Post[]
     constructor(private apiService: ApiService){}
 
     ngOnInit(): void {
-      this.apiService.getPosts().subscribe((posts) => {
-        console.log(posts[0]);
+      this.apiService.getPosts(4).subscribe((posts) => {
+        console.log(posts);
+        
         
       });
     }
