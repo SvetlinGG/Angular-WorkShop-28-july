@@ -13,8 +13,8 @@ export class ThemesListComponent {
   constructor(private apiService: ApiService){}
 
   ngOnInit(){
-    this.apiService.getThemes().subscribe( t => {
-      console.log(t);
+    this.apiService.getThemes().subscribe( (themes) => {
+      console.log(themes);
       
     });
   }
