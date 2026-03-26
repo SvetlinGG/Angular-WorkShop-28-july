@@ -15,6 +15,6 @@ export class PostsListComponent implements OnInit {
       this.apiService.getPosts().subscribe((p) => {
         console.log(p);
         
-      })
+      });
     }
 }
