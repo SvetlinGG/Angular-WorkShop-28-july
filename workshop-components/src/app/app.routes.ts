@@ -7,6 +7,7 @@ import { ErrorComponent } from './error/error.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { AddThemeComponent } from './theme/add-theme/add-theme.component';
 import { MainComponent } from './main/main.component';
+import { CurrentThemeComponent } from './theme/current-theme/current-theme.component';
 
 
 export const routes: Routes = [
@@ -19,7 +20,10 @@ export const routes: Routes = [
     {path: 'profile', component: ProfileComponent},
 
 // Theme routing:
-    {path: 'themes', component: MainComponent},
+    {path: 'themes', children: [
+        {path: '', component: MainComponent},
+        {path: ':themeId', component: CurrentThemeComponent}
+    ]},
     {path: 'add-theme', component: AddThemeComponent},
     
     {path: '404', component: ErrorComponent},

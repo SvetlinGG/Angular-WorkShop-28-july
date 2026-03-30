@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { Theme } from '../../types/theme';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-themes-list',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './themes-list.component.html',
   styleUrl: './themes-list.component.css'
 })
@@ -15,7 +16,7 @@ export class ThemesListComponent implements OnInit {
 
   ngOnInit(){
     this.apiService.getThemes().subscribe( (themes) => {
-      console.log(themes);
+      
       this.themes = themes;
     });
   }
