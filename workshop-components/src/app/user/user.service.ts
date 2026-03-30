@@ -9,11 +9,16 @@ export class UserService {
   USER_KEY = '[user]';
   user: UserForAuth | null = null;
 
+  get isLogged(): boolean {
+    return !!this.user;
+  }
+
   constructor() {
     try {
-      
+      const lsUser = localStorage.getItem(this.USER_KEY) || '';
+      this.user = JSON.parse(lsUser);
     } catch (error) {
-      
+      this.user = null;
     }
    }
 
