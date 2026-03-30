@@ -11,7 +11,12 @@ import { ApiService } from '../../api.service';
 export class AddThemeComponent {
   constructor ( private apiService: ApiService){}
 
-  addTheme(){
+  addTheme(event: Event, themeName: string, postText: string){
+    event.preventDefault()
     
+    this.apiService.createTheme(themeName, postText).subscribe( data => {
+      console.log(data);
+      
+    })
   }
 }
