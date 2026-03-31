@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { WelcomeMsgComponent } from '../shared/welcome-msg/welcome-msg.component';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-home',
@@ -11,4 +12,8 @@ import { WelcomeMsgComponent } from '../shared/welcome-msg/welcome-msg.component
 })
 export class HomeComponent {
 
+  get isLogged(): boolean {
+    return this.userService.isLogged;
+  }
+  constructor( private userService: UserService){}
 }
