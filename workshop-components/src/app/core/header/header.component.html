@@ -4,8 +4,16 @@
             <img src=".//public/logo.png" >
             <p class="logo"> SoftUni Forum</p>
         </div>
+
+        @if (!isLogged) {
         <div class="mini-navbar">
             <ul>
+                <li>
+                    <a routerLink="/profile">John's profile</a>
+                </li>
+                <li>
+                    <a routerLink="/logout">Logout</a>
+                </li>
                 <li>
                     <a routerLink="/login">Login</a>
                 </li>
@@ -14,6 +22,7 @@
                 </li>
             </ul>
         </div>
+    }
     </div>
     <nav>
         <ul>
