@@ -19,6 +19,14 @@
                     [appEmail]="domains"
                     />
             </p>
+
+            @if (inputEmail?.touched) {
+                <div>
+                    @if (inputEmail?.errors?.['required']) {
+                        <p class="error">Email is required!</p>
+                    }
+                </div>
+            }
             
 
             <p class="field field-icon">
