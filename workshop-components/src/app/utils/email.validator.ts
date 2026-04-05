@@ -7,7 +7,8 @@ export function emailValidator(domains: string[]):ValidatorFn{
     const regExp = new RegExp(`[A-Za-z0-9]+@gmail\.(${domainStr})`)
     ;
     return (control) => {
-        console.log(regExp.test(control.value));
+        const isInvalid = control.value === '' || regExp.test(control.value);
+        console.log(isInvalid)
         
         return null;
     };
